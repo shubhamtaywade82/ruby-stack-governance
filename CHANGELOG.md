@@ -3,7 +3,7 @@
 ## 1.0.2 — enforcement pipeline green
 
 The bootstrap shipped a Gemfile CI could never install and code that had never
-been linted. Fixed in one pass and verified on Ruby 3.3.7 — the exact
+been linted. Fixed in one pass and verified on Ruby 4.0.6 — the exact
 toolchain the workflows run:
 
 - `rubocop-bundler` (a gem that does not exist on rubygems.org) replaced by
@@ -19,12 +19,15 @@ toolchain the workflows run:
   one invalid matcher fixed.
 - `lib/`: lint debt paid — communicative names, hoisted duplicate reads,
   extracted helpers, truthiness checks.
-- Gate results at this commit: rubocop 0 offenses, reek 0 warnings,
+- Gate results on the 4.0.6 pipeline: rubocop 0 offenses, reek 0 warnings,
   rubycritic 83.58 (min 80), bundler-audit clean, mirror drift clean,
   9 rspec examples green.
-- `.ruby-version` corrected back to 3.3.7 — the attempted "4.0.6" is not a
-  real Ruby release, and the workflows pin ruby 3.3.7 (bundler enforces the
-  directive; version claims are verified, never invented — R7).
+- Ruby toolchain: `.ruby-version` (single home, Law 1) reads 4.0.6 and both
+  workflows pin `ruby-version: "4.0.6"`; setup-ruby installs it cleanly on
+  ubuntu-24.04, so the earlier "not a real release" note was wrong and the
+  interim 3.3.7 pin was superseded. The gate results above are verified
+  against the 4.0.6 green runs — version claims are verified, never
+  invented (R7).
 
 ## 1.0.1 — R11: organization name retired
 

@@ -1,7 +1,7 @@
 # ENFORCEMENT — The Runbook
 
 Ruby Stack Governance: the engineering training corpus as a deterministic
-enforcement system. Baseline: Ruby 3.3 / Rails ~> 7.2 / RuboCop >= 1.72
+enforcement system. Baseline: Ruby 4.0 / Rails ~> 7.2 / RuboCop >= 1.72
 (`plugins:` syntax). Rails 8.1 is adopted as the next upgrade track (R7).
 
 ## W5H

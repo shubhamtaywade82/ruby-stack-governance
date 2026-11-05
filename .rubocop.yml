@@ -1,6 +1,6 @@
 # Ruby Stack Governance — final RuboCop configuration (R1–R7).
 #
-# Baseline: Ruby 3.3 / Rails ~> 7.2 / RuboCop >= 1.72, `plugins:` syntax only.
+# Baseline: Ruby 4.0 / Rails ~> 7.2 / RuboCop >= 1.72, `plugins:` syntax only.
 # This file is the SINGLE home for code limits (Law 3). Do not restate any
 # number from here in docs, code, or chat — read it instead.
 #
@@ -22,7 +22,7 @@ inherit_from: .rubocop_todo.yml
 
 AllCops:
   NewCops: enable
-  TargetRubyVersion: 3.3
+  TargetRubyVersion: 4.0
   Exclude:
     - "coverage/**/*"
     - "tmp/**/*"

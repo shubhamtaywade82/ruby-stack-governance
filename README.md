@@ -1,7 +1,7 @@
 # Ruby Stack Governance
 
 **Engineering standards as a deterministic enforcement system.**
-Ruby 3.3 · Rails ~> 7.2 (8.1 adopted as the next track) · RuboCop >= 1.72
+Ruby 4.0 · Rails ~> 7.2 (8.1 adopted as the next track) · RuboCop >= 1.72
 (`plugins:` syntax only).
 
 The training corpus is an **Executable Knowledge Base**: every rule has exactly
@@ -13,7 +13,7 @@ whole thing live over MCP.
 
 | # | Layer | Holds |
 |---|-------|-------|
-| 1 | static | RuboCop + 8 plugins, reek, rubycritic, Brakeman, bundler-audit, Packwerk |
+| 1 | static | RuboCop + 7 plugins, reek, rubycritic, Brakeman, bundler-audit, Packwerk |
 | 2 | runtime | guard specs, SimpleCov, mutant, Bullet, boot validators, death handlers, QueryCountTracker |
 | 3 | process | PR template, labels, hooks, IP tracker, Boy Scout rule |
 | 4 | agent-context | `.claude/skills/*`, `.cursor/rules/*`, `AGENT_CONTEXT.md` — generated, gated |

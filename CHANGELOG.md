@@ -22,6 +22,9 @@ toolchain the workflows run:
 - Gate results at this commit: rubocop 0 offenses, reek 0 warnings,
   rubycritic 83.58 (min 80), bundler-audit clean, mirror drift clean,
   9 rspec examples green.
+- `.ruby-version` corrected back to 3.3.7 — the attempted "4.0.6" is not a
+  real Ruby release, and the workflows pin ruby 3.3.7 (bundler enforces the
+  directive; version claims are verified, never invented — R7).
 
 ## 1.0.1 — R11: organization name retired
 

@@ -13,7 +13,7 @@ whole thing live over MCP.
 
 | # | Layer | Holds |
 |---|-------|-------|
-| 1 | static | RuboCop + 7 plugins, reek, rubycritic, Brakeman, bundler-audit, Packwerk |
+| 1 | static | RuboCop + 8 plugins, reek, rubycritic, Brakeman, bundler-audit, Packwerk |
 | 2 | runtime | guard specs, SimpleCov, mutant, Bullet, boot validators, death handlers, QueryCountTracker |
 | 3 | process | PR template, labels, hooks, IP tracker, Boy Scout rule |
 | 4 | agent-context | `.claude/skills/*`, `.cursor/rules/*`, `AGENT_CONTEXT.md` — generated, gated |
@@ -31,6 +31,7 @@ Start with `docs/LAWS.md` — the six laws decide every dispute. Then
 | `config/gates.yml` | single home for gate commands |
 | `.rubocop.yml` | single home for code limits |
 | `.ruby-version` | single home for the Ruby version |
+| `docs/NAMING.md` | single home for the org/repo name (Law 1) |
 | `lib/`, `exe/`, `bin/` | the MCP server + mirror generator + binstubs |
 | `spec/mcp/` | pinned wire contract + idempotency + gate-allowlist specs |
 | `.claude/`, `.cursor/`, `AGENT_CONTEXT.md`, `.cursorrules` | generated mirrors — do not hand-edit |
@@ -69,8 +70,10 @@ agent edits app/sidekiq/invoice_sync_job.rb
 
 ## Status
 
-- R1–R10 merged; **A25+ reserved** for the pending corpus merge
+- R1–R11 merged (R11 retired the legacy org name → **Ruby Stack Governance**;
+  see `docs/NAMING.md`). Enforcement pipeline green on Ruby 4.0.6.
+- **A25+ reserved** for the pending corpus merge
   (`ruby-agent-skills` diff + `react-agent-skills` full pass — React stack).
 - `skills_corpus_coverage` ratchet: mirrored artifacts vs scheduled —
   read `docs/ratchets.yml`.
-- Gemfile.lock commits in the first bootstrap PR (`bundle install`).
+- `Gemfile.lock` committed; `bundler-audit` clean.

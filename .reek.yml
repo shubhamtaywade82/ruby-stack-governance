@@ -1,8 +1,32 @@
 # Self-lint + target-app profile (A12). Generous baselines; the rubycritic
 # minimum score and its ratchet live in docs/ratchets.yml + config/gates.yml.
+#
+# Exclusions below are recorded standards decisions (A13 process layer):
+# each entry names the exact smell context and carries its justification.
 detectors:
   TooManyStatements:
     max_statements: 12
+  UtilityFunction:
+    exclude:
+      # framework DSL `call` handlers delegate to Corpus/Gates modules;
+      # instance state is intentionally unused (read-only design, D3)
+      - 'RubyStackGovernance::MCP::Tools::ListArtifacts#call'
+      - 'RubyStackGovernance::MCP::Tools::GetArtifact#call'
+      - 'RubyStackGovernance::MCP::Tools::SearchCorpus#call'
+      - 'RubyStackGovernance::MCP::Tools::GetLimit#call'
+      - 'RubyStackGovernance::MCP::Tools::GetRatchet#call'
+      - 'RubyStackGovernance::MCP::Tools::GetVersions#call'
+      - 'RubyStackGovernance::MCP::Tools::GetTodoBaseline#call'
+      - 'RubyStackGovernance::MCP::Tools::ResolveViolation#call'
+      - 'RubyStackGovernance::MCP::Tools::RunGate#call'
+  FeatureEnvy:
+    exclude:
+      # tools reshape manifest Hashes — data in, data out
+      - 'RubyStackGovernance::MCP::Tools::ListArtifacts#call'
+  TooManyConstants:
+    exclude:
+      # path constants are the single home for mirror targets (Law 3)
+      - 'RubyStackGovernance::AgentMirror'
 exclude_paths:
   - spec
   - vendor

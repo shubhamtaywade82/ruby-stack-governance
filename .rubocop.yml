@@ -9,9 +9,9 @@
 # file must remove that file's entry (A13).
 
 plugins:
-  - rubocop-bundler
   - rubocop-capybara
   - rubocop-factory_bot
+  - rubocop-packaging
   - rubocop-performance
   - rubocop-rails
   - rubocop-rake
@@ -51,13 +51,23 @@ Layout/LineLength:
 Lint/NonDeterministicRequireOrder:
   Enabled: false # mirrors are byte-stable by template, not by require order
 
+Rails/Pluck:
+  Enabled: false # arrays of plain Hashes at runtime — no ActiveSupport
+Rails/IndexBy:
+  Enabled: false # plain Ruby Hash construction — no ActiveSupport
+Rails/RakeEnvironment:
+  Enabled: false # no Rails environment task exists in this tooling repo
+Naming/RescuedExceptionsVariableName:
+  PreferredName: error # communicative name keeps reek's UncommunicativeVariableName satisfied
 Rails/Output:
   Exclude:
     - "exe/**/*"
 
 RSpec/ExampleLength:
   Max: 15
-RSpec/FilePath:
+RSpec/SpecFilePathFormat:
+  Enabled: false # single-directory spec layout (spec/mcp)
+RSpec/SpecFilePathSuffix:
   Enabled: false # single-directory spec layout (spec/mcp)
 RSpec/MultipleExpectations:
   Max: 3

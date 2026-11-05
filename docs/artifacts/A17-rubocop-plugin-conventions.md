@@ -11,8 +11,9 @@ The plugin set, cop-enablement policy, and cop-change process.
 1. RuboCop >= 1.72 with the `plugins:` syntax only; `require:` is forbidden
    — enforcement here is the parse itself (old syntax fails to load).
 2. The eight plugins, each earning its gate: rubocop-rails, rubocop-rspec,
-   rubocop-performance, rubocop-thread_safety, rubocop-bundler,
-   rubocop-rake, rubocop-capybara, rubocop-factory_bot.
+   rubocop-performance, rubocop-thread_safety, rubocop-packaging,
+   rubocop-rake, rubocop-capybara, rubocop-factory_bot. (Bundler cops ship
+   in rubocop core — no bundler plugin is admitted.)
 3. A plugin is admitted by the A01 rule (one tool per mandate) and removed
    when it duplicates another's cops.
 4. NewCops: enable — a new opinionated cop is a standards decision recorded

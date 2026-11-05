@@ -13,7 +13,6 @@ gem "rspec", "~> 3.13"
 group :static do
   # RuboCop >= 1.72 with `plugins:` syntax only — `require:` is forbidden (A17).
   gem "rubocop", ">= 1.72", require: false
-  gem "rubocop-bundler", require: false
   gem "rubocop-capybara", require: false
   gem "rubocop-factory_bot", require: false
   gem "rubocop-performance", require: false

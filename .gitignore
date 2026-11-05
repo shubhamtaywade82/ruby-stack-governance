@@ -12,3 +12,4 @@ coverage/
 # --- os / editors ---
 .DS_Store
 .idea/
+.railsforge

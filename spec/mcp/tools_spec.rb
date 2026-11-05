@@ -16,7 +16,8 @@ RSpec.describe RubyStackGovernance::MCP::Tools do
   end
 
   it "is read-only — no tool name starts with create, update, delete, or write" do
-    forbidden = %r{\A(create|update|delete|write)}
-    expect(described_class.wire_schemas.map { |tool| tool["name"] }).to.none { |n| n.match?(forbidden) }
+    forbidden = /\A(create|update|delete|write)/
+    names = described_class.wire_schemas.map { |tool| tool["name"] }
+    expect(names.none? { |n| n.match?(forbidden) }).to be(true)
   end
 end

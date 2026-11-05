@@ -1,0 +1,14 @@
+# --- security: credentials never tracked ---
+github-token.txt
+*.token
+upload/
+
+# --- ruby ---
+.bundle/
+tmp/
+coverage/
+*.log
+
+# --- os / editors ---
+.DS_Store
+.idea/

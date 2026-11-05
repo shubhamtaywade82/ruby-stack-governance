@@ -1,0 +1,3 @@
+# Baseline ratchet (Law 2): offenders move OUT of this file, never in.
+# Boy Scout rule: a PR that touches a listed file must fix its entry (A13).
+# This repo seeds the baseline empty — it must stay empty.

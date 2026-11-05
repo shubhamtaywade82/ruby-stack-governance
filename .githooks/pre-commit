@@ -1,0 +1,19 @@
+#!/bin/sh
+# Hygiene + mirror-drift gate for staged files. Zero dependencies beyond git;
+# Ruby gates run when bundler is available, otherwise CI remains the arbiter.
+set -e
+git diff --cached --check || { echo "FAIL: trailing whitespace or conflict markers staged"; exit 1; }
+STAGED=$(git diff --cached --name-only --diff-filter=ACMR | tr '\n' ' ')
+echo "staged: ${STAGED}"
+case "$STAGED" in
+  *docs/artifacts/*|*docs/ratchets.yml*)
+    if command -v bundle >/dev/null 2>&1; then bin/rake agent:mirror:check; else
+      echo "WARN: mirror drift not verified locally (bundler missing) — CI gates it"
+    fi ;;
+esac
+case "$STAGED" in
+  *.rb*)
+    if command -v bundle >/dev/null 2>&1; then bundle exec rubocop; else
+      echo "WARN: rubocop skipped locally (bundler missing) — CI gates it"
+    fi ;;
+esac

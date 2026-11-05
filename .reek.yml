@@ -1,0 +1,9 @@
+# Self-lint + target-app profile (A12). Generous baselines; the rubycritic
+# minimum score and its ratchet live in docs/ratchets.yml + config/gates.yml.
+detectors:
+  TooManyStatements:
+    max_statements: 12
+exclude_paths:
+  - spec
+  - vendor
+  - tmp

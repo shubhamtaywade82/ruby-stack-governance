@@ -1,0 +1,68 @@
+# Ruby Stack Governance — final RuboCop configuration (R1–R7).
+#
+# Baseline: Ruby 3.3 / Rails ~> 7.2 / RuboCop >= 1.72, `plugins:` syntax only.
+# This file is the SINGLE home for code limits (Law 3). Do not restate any
+# number from here in docs, code, or chat — read it instead.
+#
+# Baseline offenders live in .rubocop_todo.yml — a one-way ratchet (Law 2):
+# entries are removed, never added. Boy Scout rule: a PR that touches a listed
+# file must remove that file's entry (A13).
+
+plugins:
+  - rubocop-bundler
+  - rubocop-capybara
+  - rubocop-factory_bot
+  - rubocop-performance
+  - rubocop-rails
+  - rubocop-rake
+  - rubocop-rspec
+  - rubocop-thread_safety
+
+inherit_from: .rubocop_todo.yml
+
+AllCops:
+  NewCops: enable
+  TargetRubyVersion: 3.3
+  Exclude:
+    - "coverage/**/*"
+    - "tmp/**/*"
+    - "vendor/**/*"
+
+Metrics/AbcSize:
+  Max: 25
+Metrics/ClassLength:
+  Max: 150
+Metrics/BlockLength:
+  Exclude:
+    - "lib/tasks/**/*.rake"
+    - "spec/**/*.rb"
+Metrics/CyclomaticComplexity:
+  Max: 12
+Metrics/MethodLength:
+  Max: 25
+Metrics/ModuleLength:
+  Max: 250
+Metrics/PerceivedComplexity:
+  Max: 12
+
+Layout/LineLength:
+  Max: 120
+
+Lint/NonDeterministicRequireOrder:
+  Enabled: false # mirrors are byte-stable by template, not by require order
+
+Rails/Output:
+  Exclude:
+    - "exe/**/*"
+
+RSpec/ExampleLength:
+  Max: 15
+RSpec/FilePath:
+  Enabled: false # single-directory spec layout (spec/mcp)
+RSpec/MultipleExpectations:
+  Max: 3
+
+Style/Documentation:
+  Enabled: true
+Style/FrozenStringLiteralComment:
+  Enabled: true

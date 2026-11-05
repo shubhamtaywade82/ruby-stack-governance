@@ -1,0 +1,57 @@
+# Pinned wire contract for ruby-stack-governance MCP v1.0.0 (D9, R9).
+# Changing this file requires bumping MCP::VERSION + a CHANGELOG entry.
+# Verified by spec/mcp/tools_spec.rb against Tools.wire_schemas.
+- name: list_artifacts
+  description: List governance artifacts (standards knowledge base); optional stack filter
+  arguments:
+  - name: stack
+    type: string
+    required: false
+- name: get_artifact
+  description: Return one artifact's full body plus manifest metadata
+  arguments:
+  - name: id
+    type: string
+    required: true
+- name: search_corpus
+  description: Search artifacts (case-insensitive); returns artifact id, file, line, text
+  arguments:
+  - name: query
+    type: string
+    required: true
+  - name: stack
+    type: string
+    required: false
+- name: get_limit
+  description: Current limit for a metric, read live from its single source file
+  arguments:
+  - name: metric
+    type: string
+    required: true
+- name: get_ratchet
+  description: Current and next ratchet target for a metric from docs/ratchets.yml
+  arguments:
+  - name: metric
+    type: string
+    required: true
+- name: get_versions
+  description: Version pins, each annotated with the single file that owns it
+  arguments: []
+- name: get_todo_baseline
+  description: Current todo baseline — cops, excluded files, and value overrides
+  arguments: []
+- name: resolve_violation
+  description: For a RuboCop cop — configured state, todo status, artifact hits
+  arguments:
+  - name: cop_name
+    type: string
+    required: true
+  - name: snippet
+    type: string
+    required: false
+- name: run_gate
+  description: Run a named enforcement gate from the allowlisted registry (config/gates.yml)
+  arguments:
+  - name: gate
+    type: string
+    required: true

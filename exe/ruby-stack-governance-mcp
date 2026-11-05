@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+# The governance corpus served as a queryable MCP server (Layer 5, R9).
+# Read-only by design (D3): the process layer remains the only write path.
+
+$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
+require "ruby_stack_governance/mcp"
+
+RubyStackGovernance::MCP::Server.run

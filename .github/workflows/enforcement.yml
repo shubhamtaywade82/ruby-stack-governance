@@ -1,0 +1,21 @@
+name: enforcement
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  static:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.7"
+          bundler-cache: false
+      - run: bundle install --jobs 4
+      - run: bundle exec rubocop
+      - run: bundle exec reek lib exe
+      - run: bundle exec rubycritic --minimum-score 80 lib exe
+      - run: bundle exec bundler-audit check

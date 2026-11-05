@@ -1,0 +1,19 @@
+name: agent-interface
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  mirrors-and-contract:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.3.7"
+          bundler-cache: false
+      - run: bundle install --jobs 4
+      - run: bin/rake agent:mirror:check
+      - run: bundle exec rspec spec/mcp

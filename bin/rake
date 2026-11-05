@@ -1,0 +1,3 @@
+#!/bin/sh
+# Wrapper so gate argv (config/gates.yml) never hardcodes bundler details.
+exec bundle exec rake "$@"

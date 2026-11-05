@@ -1,0 +1,4 @@
+#!/bin/sh
+# MCP server launcher (stdio) — registered in .mcp.json and .cursor/mcp.json.
+cd "$(dirname "$0")/.." || exit 1
+exec bundle exec ruby exe/ruby-stack-governance-mcp "$@"

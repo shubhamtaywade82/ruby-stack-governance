@@ -1,0 +1,173 @@
+# Machine index of the corpus (single home for artifact metadata — Law 1).
+# Content lives in the artifact files; this registry holds identity only.
+# Mirrors are generated from here + each artifact's `## Agent Digest`.
+#
+# Coverage ratchet (docs/ratchets.yml — skills_corpus_coverage):
+#   mirror: true    → mirrored now into .claude/skills + .cursor/rules
+#   mirror_target: true → scheduled (W8); counted by the coverage ratchet
+#   neither         → internal record; never mirrored
+#
+# A25+ reserved for the R8 corpus merge (ruby-agent-skills diff, react-agent-skills
+# full pass) — react stack lands there.
+artifacts:
+  - id: A01
+    title: Tooling Map and Selection Standards
+    stacks: [ruby]
+    layer: static
+    file: docs/artifacts/A01-tooling-map.md
+  - id: A02
+    title: Background Job System Selection Standards
+    stacks: [ruby, rails]
+    layer: runtime
+    file: docs/artifacts/A02-background-job-selection.md
+    mirror_target: true
+  - id: A03
+    title: Exception Handling Standards
+    stacks: [ruby, rails]
+    layer: runtime
+    file: docs/artifacts/A03-exception-handling.md
+    mirror_target: true
+  - id: A04
+    title: Testing and Coverage Standards
+    stacks: [ruby, rails]
+    layer: runtime
+    file: docs/artifacts/A04-testing-and-coverage.md
+    mirror: true
+    skills_slug: rspec-testing-standards
+    skill_description: "Use when writing or editing RSpec specs or factories. One expectation per behavior, wall-clock ban, guard specs in the standard suite, delta rule, flaky quarantine ratchet."
+    globs: "spec/**, app/**"
+  - id: A05
+    title: Packwerk Boundaries Standards
+    stacks: [ruby, rails]
+    layer: static
+    file: docs/artifacts/A05-packwerk-boundaries.md
+    mirror_target: true
+  - id: A06
+    title: Production Monitoring Standards
+    stacks: [rails]
+    layer: runtime
+    file: docs/artifacts/A06-production-monitoring.md
+    mirror_target: true
+  - id: A07
+    title: ActiveRecord Query Standards
+    stacks: [rails]
+    layer: runtime
+    file: docs/artifacts/A07-activerecord-query-standards.md
+    mirror: true
+    skills_slug: activerecord-query-standards
+    skill_description: "Use when writing ActiveRecord queries, scopes, or migrations. N+1 bans with Bullet, batching over loops, index discipline, query objects, per-endpoint budgets."
+    globs: "app/models/**, app/queries/**, db/migrate/**"
+  - id: A08
+    title: Secrets Management Standards
+    stacks: [ruby, rails]
+    layer: runtime
+    file: docs/artifacts/A08-secrets-management.md
+    mirror: true
+    skills_slug: secrets-handling
+    skill_description: "Use when touching credentials, ENV access, tokens, or secret_key_base. Rails credentials single home, ENV allowlist accessor, rotation policy, scanner gate."
+    globs: "config/credentials/**, config/initializers/**, app/**"
+  - id: A09
+    title: API Versioning Standards
+    stacks: [rails]
+    layer: runtime
+    file: docs/artifacts/A09-api-versioning.md
+    mirror: true
+    skills_slug: api-versioning-standards
+    skill_description: "Use when adding or changing API endpoints. URL path versioning, additive versions, Deprecation/Sunset headers, rswag contract as single home, drift gate."
+    globs: "app/controllers/api/**, config/routes.rb, spec/requests/api/**"
+  - id: A10
+    title: Caching Standards
+    stacks: [rails]
+    layer: runtime
+    file: docs/artifacts/A10-caching-standards.md
+    mirror: true
+    skills_slug: caching-standards
+    skill_description: "Use when adding cache entries or fragment caches. Key-based invalidation only, explicit TTLs, hit-ratio monitoring, cache never hides an N+1."
+    globs: "app/views/**, app/models/**, app/queries/**"
+  - id: A11
+    title: Slow Query Monitoring Standards
+    stacks: [rails]
+    layer: runtime
+    file: docs/artifacts/A11-slow-query-monitoring.md
+    mirror_target: true
+  - id: A12
+    title: Static Analysis Suite Standards
+    stacks: [ruby]
+    layer: static
+    file: docs/artifacts/A12-static-analysis-suite.md
+  - id: A13
+    title: Process Layer Standards
+    stacks: [ruby, rails]
+    layer: process
+    file: docs/artifacts/A13-process-layer.md
+    mirror: true
+    skills_slug: enforcement-workflow
+    skill_description: "Use when opening or reviewing PRs, triaging gate failures, or changing limits and ratchets. Checklist, labels taxonomy, Boy Scout rule, mirror regeneration, IP tracker."
+    globs: "**"
+  - id: A14
+    title: Sidekiq Job Implementation Standards
+    stacks: [ruby, rails]
+    layer: runtime
+    file: docs/artifacts/A14-sidekiq-job-implementation.md
+    mirror: true
+    skills_slug: sidekiq-job-standards
+    skill_description: "Use when writing or reviewing Sidekiq jobs in app/sidekiq/ or app/jobs/. Idempotency, explicit retry and death handlers, timeouts, plain serializable args, per-job query budgets."
+    globs: "app/sidekiq/**, app/jobs/**"
+  - id: A15
+    title: Runtime Guards Standards
+    stacks: [rails]
+    layer: runtime
+    file: docs/artifacts/A15-runtime-guards.md
+    mirror_target: true
+  - id: A16
+    title: Executable Knowledge Base Architecture
+    stacks: [ruby, rails]
+    layer: agent-context
+    file: docs/artifacts/A16-executable-knowledge-base.md
+  - id: A17
+    title: RuboCop Plugin Conventions
+    stacks: [ruby]
+    layer: static
+    file: docs/artifacts/A17-rubocop-plugin-conventions.md
+    mirror_target: true
+  - id: A18
+    title: RSpec Guard Patterns
+    stacks: [ruby, rails]
+    layer: runtime
+    file: docs/artifacts/A18-rspec-guard-patterns.md
+    mirror_target: true
+  - id: A19
+    title: Query Budgets Standards
+    stacks: [rails]
+    layer: runtime
+    file: docs/artifacts/A19-query-budgets.md
+    mirror_target: true
+  - id: A20
+    title: Boot Validation Standards
+    stacks: [rails]
+    layer: runtime
+    file: docs/artifacts/A20-boot-validation.md
+    mirror_target: true
+  - id: A21
+    title: Packwerk CI Gates
+    stacks: [ruby, rails]
+    layer: static
+    file: docs/artifacts/A21-packwerk-ci-gates.md
+    mirror_target: true
+  - id: A22
+    title: API Versioning Enforcement
+    stacks: [rails]
+    layer: runtime
+    file: docs/artifacts/A22-api-versioning-enforcement.md
+    mirror_target: true
+  - id: A23
+    title: Cache Key Discipline
+    stacks: [rails]
+    layer: runtime
+    file: docs/artifacts/A23-cache-key-discipline.md
+    mirror_target: true
+  - id: A24
+    title: Documentation Standards
+    stacks: [ruby, rails]
+    layer: agent-context
+    file: docs/artifacts/A24-documentation-standards.md

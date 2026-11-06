@@ -48,6 +48,14 @@ static -> runtime -> process -> agent-context -> agent-interface
 | A34 | React Performance Standards | runtime | react | `docs/artifacts/A34-react-performance-standards.md` |
 | A35 | Frontend Security and Supply Chain Standards | runtime | react | `docs/artifacts/A35-frontend-security-standards.md` |
 | A36 | Agent Evaluation Standards | process | react | `docs/artifacts/A36-agent-evaluation-standards.md` |
+| A37 | Node.js Modules and Package Standards | static | nodejs | `docs/artifacts/A37-node-modules-standards.md` |
+| A38 | Node.js Async and Event-Loop Standards | runtime | nodejs | `docs/artifacts/A38-node-async-standards.md` |
+| A39 | Node.js Streams and Backpressure Standards | runtime | nodejs | `docs/artifacts/A39-node-streams-standards.md` |
+| A40 | Node.js HTTP Service Standards | runtime | nodejs | `docs/artifacts/A40-node-http-standards.md` |
+| A41 | Node.js Process and Runtime Standards | runtime | nodejs | `docs/artifacts/A41-node-process-standards.md` |
+| A42 | Node.js Logging and Observability Standards | runtime | nodejs | `docs/artifacts/A42-node-logging-standards.md` |
+| A43 | Node.js Service Testing Standards | runtime | nodejs | `docs/artifacts/A43-node-testing-standards.md` |
+| A44 | Node.js Server Security Standards | runtime | nodejs | `docs/artifacts/A44-node-security-standards.md` |
 
 ## Numbers (single homes)
 

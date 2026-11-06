@@ -10,8 +10,10 @@
 # A25–A36: react stack corpus merge (R8) — component engineering, hooks,
 # state, data fetching + RSC, forms, testing, E2E + visual, TypeScript
 # contracts, accessibility, performance, security + supply chain, and agent
-# evaluation. A37+ reserved for ecosystem expansions (per-library skills stay
-# in the pack repos).
+# evaluation. A37–A44: nodejs stack merge — modules/packages, async/event
+# loop, streams/backpressure, HTTP services, process/runtime, logging,
+# service testing, server security. A45+ reserved for ecosystem expansions
+# (per-library skills stay in the pack repos).
 artifacts:
   - id: A01
     title: Tooling Map and Selection Standards
@@ -282,3 +284,75 @@ artifacts:
     skills_slug: agent-evaluation-standards
     skill_description: "Use when evaluating AI-agent-assisted frontend changes. Evidence over self-description; full gate set with no machine exemptions; scope discipline scored; adversarial probes from one home."
     globs: "**"
+  - id: A37
+    title: Node.js Modules and Package Standards
+    stacks: [nodejs]
+    layer: static
+    file: docs/artifacts/A37-node-modules-standards.md
+    mirror: true
+    skills_slug: node-modules-standards
+    skill_description: "Use when setting up or changing module format, package.json, engines, exports fields, dependencies, or script conventions in a Node.js package or service. ESM-first; one package manager; lockfile is the pin home."
+    globs: "package.json, .nvmrc, src/**, lib/**"
+  - id: A38
+    title: Node.js Async and Event-Loop Standards
+    stacks: [nodejs]
+    layer: runtime
+    file: docs/artifacts/A38-node-async-standards.md
+    mirror: true
+    skills_slug: node-async-standards
+    skill_description: "Use when writing async Node.js code — promises, cancellation, concurrency, worker threads, or event-loop-sensitive handlers. No sync I/O on request paths; bounded pools; unhandled rejections fail boot."
+    globs: "src/**, lib/**, server/**"
+  - id: A39
+    title: Node.js Streams and Backpressure Standards
+    stacks: [nodejs]
+    layer: runtime
+    file: docs/artifacts/A39-node-streams-standards.md
+    mirror: true
+    skills_slug: node-streams-standards
+    skill_description: "Use when moving large payloads through Node.js — pipelines, transforms, uploads, watchers, or transport compression. stream.pipeline over bare pipe; backpressure honored; nothing large buffered in memory."
+    globs: "src/**, server/**, lib/**"
+  - id: A40
+    title: Node.js HTTP Service Standards
+    stacks: [nodejs]
+    layer: runtime
+    file: docs/artifacts/A40-node-http-standards.md
+    mirror: true
+    skills_slug: node-http-standards
+    skill_description: "Use when building or reviewing Node.js HTTP servers and clients — timeouts, body limits, error envelopes, boundary validation, health endpoints, and graceful shutdown ordering."
+    globs: "src/**, server/**, routes/**, app/**"
+  - id: A41
+    title: Node.js Process and Runtime Standards
+    stacks: [nodejs]
+    layer: runtime
+    file: docs/artifacts/A41-node-process-standards.md
+    mirror: true
+    skills_slug: node-process-standards
+    skill_description: "Use when managing Node.js runtimes, signals, process managers, boot config validation, child processes, or background queues. One runtime pin file; SIGTERM drains; queues follow A14."
+    globs: "server/**, src/**, bin/**, scripts/**"
+  - id: A42
+    title: Node.js Logging and Observability Standards
+    stacks: [nodejs]
+    layer: runtime
+    file: docs/artifacts/A42-node-logging-standards.md
+    mirror: true
+    skills_slug: node-logging-standards
+    skill_description: "Use when adding or reviewing logging, correlation IDs, redaction, metrics, or profiling in Node.js services. One structured logger; no console.log in server paths; sensitive fields redacted at the serializer home."
+    globs: "src/**, server/**, lib/**"
+  - id: A43
+    title: Node.js Service Testing Standards
+    stacks: [nodejs]
+    layer: runtime
+    file: docs/artifacts/A43-node-testing-standards.md
+    mirror: true
+    skills_slug: node-testing-standards
+    skill_description: "Use when writing or editing Node.js service tests — framework discipline, boundary exercise, network mocking, database isolation, guards in the standard suite, and the flake quarantine."
+    globs: "test/**, tests/**, spec/**, src/**"
+  - id: A44
+    title: Node.js Server Security Standards
+    stacks: [nodejs]
+    layer: runtime
+    file: docs/artifacts/A44-node-security-standards.md
+    mirror: true
+    skills_slug: node-security-standards
+    skill_description: "Use when securing Node.js servers — headers, rate limiting, path traversal and command injection prevention, timing-safe secrets, centralized auth guards, and frozen installs. npm_audit gates CI."
+    globs: "src/**, server/**, app/**, middleware/**"

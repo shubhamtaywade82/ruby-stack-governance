@@ -1,5 +1,32 @@
 # Changelog
 
+## 1.2.0 — nodejs stack corpus merge
+
+The Node.js stack lands in the corpus (A37–A44), grounded in the
+Awesome Node.js domains (streams, control flow, logging, testing,
+security, process management, queues). No Ruby code changed — the MCP
+contract stays v1.0.0; every addition is corpus data.
+
+- 8 new artifacts, all `mirror: true`: modules/packages (ESM-first,
+  engines as the runtime pin home), async and event loop (no sync I/O on
+  request paths, unhandled-rejection boot validators), streams and
+  backpressure (pipeline over pipe, nothing large buffered), HTTP
+  services (timeouts, error envelopes, graceful drain ordering), process
+  and runtime (signals, config-at-boot, child-process argv discipline,
+  queues follow A14), logging and observability (one structured logger,
+  correlation IDs, redaction homes), service testing (boundary exercise,
+  network mocked at the edge, guards in the standard suite), and server
+  security (helmet-style headers, timing-safe secrets, centralized
+  guard chains, frozen installs).
+- 8 Claude skills + 8 Cursor rules generated; `AGENT_CONTEXT.md`
+  reindexed to 44 artifact rows. Mirrors byte-stable (Law 6); drift gate
+  green.
+- `skills_corpus_coverage` ratchet: 59 → 68 (27 of 40 mirrored-or-
+  scheduled now mirrored).
+- Gates registry `app` comment: "target application (Rails, web, or
+  node service)" — the registered web_* gates and `npm_audit` resolve
+  for node checkouts via the A37 script-naming convention.
+
 ## 1.1.0 — R8: react stack corpus merge
 
 The react stack lands in the corpus (A25–A36), distilled from the

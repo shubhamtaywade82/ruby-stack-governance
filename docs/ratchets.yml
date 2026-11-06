@@ -27,7 +27,7 @@
   home: .rubocop_todo.yml
 - metric: skills_corpus_coverage
   scope: self
-  current: 59
+  current: 68
   next: 100
   next_due: W8
   target: 100

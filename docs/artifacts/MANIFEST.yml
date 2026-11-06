@@ -7,8 +7,11 @@
 #   mirror_target: true → scheduled (W8); counted by the coverage ratchet
 #   neither         → internal record; never mirrored
 #
-# A25+ reserved for the R8 corpus merge (ruby-agent-skills diff, react-agent-skills
-# full pass) — react stack lands there.
+# A25–A36: react stack corpus merge (R8) — component engineering, hooks,
+# state, data fetching + RSC, forms, testing, E2E + visual, TypeScript
+# contracts, accessibility, performance, security + supply chain, and agent
+# evaluation. A37+ reserved for ecosystem expansions (per-library skills stay
+# in the pack repos).
 artifacts:
   - id: A01
     title: Tooling Map and Selection Standards
@@ -171,3 +174,111 @@ artifacts:
     stacks: [ruby, rails]
     layer: agent-context
     file: docs/artifacts/A24-documentation-standards.md
+  - id: A25
+    title: React Component Engineering Standards
+    stacks: [react]
+    layer: static
+    file: docs/artifacts/A25-react-component-standards.md
+    mirror: true
+    skills_slug: react-component-standards
+    skill_description: "Use when designing, implementing, or reviewing React components, props, composition, or shared UI primitives. Single-purpose components, typed prop contracts, composition over configuration, pure renders."
+    globs: "src/components/**, app/components/**, components/**"
+  - id: A26
+    title: React Hooks and Effects Standards
+    stacks: [react]
+    layer: static
+    file: docs/artifacts/A26-react-hooks-standards.md
+    mirror: true
+    skills_slug: react-hooks-standards
+    skill_description: "Use when writing or editing hooks, effects, refs, subscriptions, or external synchronization. Effects sync with external systems only; exhaustive deps; cleanup on every path; no speculative memoization."
+    globs: "src/**, app/**"
+  - id: A27
+    title: React State Management Standards
+    stacks: [react]
+    layer: static
+    file: docs/artifacts/A27-react-state-standards.md
+    mirror: true
+    skills_slug: react-state-standards
+    skill_description: "Use when deciding where UI state lives — component state, reducers, context, or shared stores. Server state is not UI state; derived values stay derived; one store paradigm per app."
+    globs: "src/**, app/**"
+  - id: A28
+    title: React Data Fetching and Server Components Standards
+    stacks: [react]
+    layer: runtime
+    file: docs/artifacts/A28-react-data-fetching-standards.md
+    mirror: true
+    skills_slug: react-data-fetching-standards
+    skill_description: "Use when implementing HTTP request lifecycles, query caching, invalidation, optimistic updates, or Server/Client component boundaries. No waterfalls; secrets stay server-side."
+    globs: "src/**, app/**, pages/**"
+  - id: A29
+    title: React Forms and Validation Standards
+    stacks: [react]
+    layer: runtime
+    file: docs/artifacts/A29-react-forms-standards.md
+    mirror: true
+    skills_slug: react-forms-standards
+    skill_description: "Use when building forms, multi-step workflows, field validation, or submission behavior. Schema-driven validation, announced errors, uncontrolled-first inputs, double-submit blocking."
+    globs: "src/components/**, app/**, forms/**"
+  - id: A30
+    title: React Testing Standards
+    stacks: [react]
+    layer: runtime
+    file: docs/artifacts/A30-react-testing-standards.md
+    mirror: true
+    skills_slug: react-testing-standards
+    skill_description: "Use when writing or editing component, hook, form, or integration tests. User-surface queries, delta rule, mocked boundaries, awaited async, guards in the standard suite, one-way flake quarantine."
+    globs: "src/**, tests/**, __tests__/**"
+  - id: A31
+    title: Frontend E2E and Visual Testing Standards
+    stacks: [react]
+    layer: runtime
+    file: docs/artifacts/A31-frontend-e2e-standards.md
+    mirror: true
+    skills_slug: frontend-e2e-standards
+    skill_description: "Use when writing browser-level end-to-end or visual regression tests for critical workflows. Deterministic selectors and state, visual sweep across viewport theme locale reduced-motion, axe scans feed the ratchet."
+    globs: "e2e/**, tests/e2e/**, playwright/**"
+  - id: A32
+    title: TypeScript Contract Standards
+    stacks: [react, typescript]
+    layer: static
+    file: docs/artifacts/A32-typescript-contract-standards.md
+    mirror: true
+    skills_slug: typescript-contract-standards
+    skill_description: "Use when modeling types, generics, or runtime validation boundaries. No any leaks; discriminated unions with exhaustive handling; schema parsing at every untrusted edge; additive public types."
+    globs: "src/**, app/**, types/**"
+  - id: A33
+    title: React Accessibility Standards
+    stacks: [react]
+    layer: runtime
+    file: docs/artifacts/A33-react-accessibility-standards.md
+    mirror: true
+    skills_slug: react-accessibility-standards
+    skill_description: "Use when building or reviewing semantic markup, keyboard interaction, focus management, dialogs, live regions, or custom ARIA widgets. Semantic HTML first; APG-aligned widgets; axe feeds the ratchet."
+    globs: "src/components/**, app/**"
+  - id: A34
+    title: React Performance Standards
+    stacks: [react]
+    layer: runtime
+    file: docs/artifacts/A34-react-performance-standards.md
+    mirror: true
+    skills_slug: react-performance-standards
+    skill_description: "Use when profiling render cost, list virtualization, code splitting, bundle sizes, or Web Vitals budgets. Profile first; budgets are ratchets read from their single home; over-budget bundles block the PR."
+    globs: "src/**, app/**"
+  - id: A35
+    title: Frontend Security and Supply Chain Standards
+    stacks: [react]
+    layer: runtime
+    file: docs/artifacts/A35-frontend-security-standards.md
+    mirror: true
+    skills_slug: frontend-security-standards
+    skill_description: "Use when handling untrusted content, tokens, CSP, third-party scripts, or dependency risk on the web. XSS banned by construction; httpOnly cookies first; server-side re-authorization; npm_audit gates CI."
+    globs: "src/**, app/**, middleware/**"
+  - id: A36
+    title: Agent Evaluation Standards
+    stacks: [react]
+    layer: process
+    file: docs/artifacts/A36-agent-evaluation-standards.md
+    mirror: true
+    skills_slug: agent-evaluation-standards
+    skill_description: "Use when evaluating AI-agent-assisted frontend changes. Evidence over self-description; full gate set with no machine exemptions; scope discipline scored; adversarial probes from one home."
+    globs: "**"

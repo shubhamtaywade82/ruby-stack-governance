@@ -1,7 +1,8 @@
 # Ruby Stack Governance
 
 **Engineering standards as a deterministic enforcement system.**
-Ruby 4.0 · Rails ~> 7.2 (8.1 adopted as the next track) · RuboCop >= 1.72
+Ruby 4.0 · Rails ~> 7.2 (8.1 adopted as the next track) · React/TypeScript
+target web stack · RuboCop >= 1.72
 (`plugins:` syntax only).
 
 The training corpus is an **Executable Knowledge Base**: every rule has exactly
@@ -13,8 +14,8 @@ whole thing live over MCP.
 
 | # | Layer | Holds |
 |---|-------|-------|
-| 1 | static | RuboCop + 8 plugins, reek, rubycritic, Brakeman, bundler-audit, Packwerk |
-| 2 | runtime | guard specs, SimpleCov, mutant, Bullet, boot validators, death handlers, QueryCountTracker |
+| 1 | static | RuboCop + 8 plugins, reek, rubycritic, Brakeman, bundler-audit, Packwerk · web: eslint, tsc |
+| 2 | runtime | guard specs, SimpleCov, mutant, Bullet, boot validators, death handlers, QueryCountTracker · web: vitest, Playwright, axe |
 | 3 | process | PR template, labels, hooks, IP tracker, Boy Scout rule |
 | 4 | agent-context | `.claude/skills/*`, `.cursor/rules/*`, `AGENT_CONTEXT.md` — generated, gated |
 | 5 | agent-interface | read-only MCP server (stdio): 9 tools over the corpus |
@@ -26,7 +27,7 @@ Start with `docs/LAWS.md` — the six laws decide every dispute. Then
 
 | Path | Role |
 |------|------|
-| `docs/artifacts/` | the corpus — A01–A24 (+ `MANIFEST.yml`, the machine index) |
+| `docs/artifacts/` | the corpus — A01–A36 (+ `MANIFEST.yml`, the machine index) |
 | `docs/ratchets.yml` | single home for every ratchet target |
 | `config/gates.yml` | single home for gate commands |
 | `.rubocop.yml` | single home for code limits |
@@ -72,8 +73,10 @@ agent edits app/sidekiq/invoice_sync_job.rb
 
 - R1–R11 merged (R11 retired the legacy org name → **Ruby Stack Governance**;
   see `docs/NAMING.md`). Enforcement pipeline green on Ruby 4.0.6.
-- **A25+ reserved** for the pending corpus merge
-  (`ruby-agent-skills` diff + `react-agent-skills` full pass — React stack).
+- R8 corpus merge landed: **A25–A36** — the react stack (component
+  engineering, hooks, state, data fetching + RSC, forms, testing,
+  E2E + visual, TypeScript contracts, accessibility, performance,
+  security + supply chain, agent evaluation), all 12 mirrored.
 - `skills_corpus_coverage` ratchet: mirrored artifacts vs scheduled —
   read `docs/ratchets.yml`.
 - `Gemfile.lock` committed; `bundler-audit` clean.

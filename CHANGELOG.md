@@ -1,5 +1,27 @@
 # Changelog
 
+## 1.1.0 — R8: react stack corpus merge
+
+The react stack lands in the corpus (A25–A36), distilled from the
+react-agent-skills pack. No Ruby code changed — the MCP contract stays
+v1.0.0 and the nine tools are untouched; every addition is corpus data.
+
+- 12 new artifacts, all `mirror: true`: component engineering, hooks and
+  effects, state management, data fetching + Server Components, forms,
+  testing, E2E + visual, TypeScript contracts, accessibility,
+  performance, security + supply chain, and agent evaluation.
+- 12 Claude skills + 12 Cursor rules generated; `AGENT_CONTEXT.md`
+  reindexed to 36 artifact rows. Mirrors byte-stable (Law 6); drift gate
+  green.
+- `skills_corpus_coverage` ratchet: 35 → 59 (19 of 32 mirrored-or-
+  scheduled now mirrored).
+- Gates registry (`app` context, now "target application — Rails or
+  web"): `npm_audit`, `web_e2e`, `web_lint`, `web_test`, `web_typecheck`
+  — resolvable by `run_gate` inside a web app checkout that adopts this
+  corpus.
+- New ratchet: `axe_violations` (scope web; home — the E2E axe suite,
+  A31/A33).
+
 ## 1.0.2 — enforcement pipeline green
 
 The bootstrap shipped a Gemfile CI could never install and code that had never

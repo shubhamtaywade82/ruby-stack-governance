@@ -36,6 +36,18 @@ static -> runtime -> process -> agent-context -> agent-interface
 | A22 | API Versioning Enforcement | runtime | rails | `docs/artifacts/A22-api-versioning-enforcement.md` |
 | A23 | Cache Key Discipline | runtime | rails | `docs/artifacts/A23-cache-key-discipline.md` |
 | A24 | Documentation Standards | agent-context | ruby, rails | `docs/artifacts/A24-documentation-standards.md` |
+| A25 | React Component Engineering Standards | static | react | `docs/artifacts/A25-react-component-standards.md` |
+| A26 | React Hooks and Effects Standards | static | react | `docs/artifacts/A26-react-hooks-standards.md` |
+| A27 | React State Management Standards | static | react | `docs/artifacts/A27-react-state-standards.md` |
+| A28 | React Data Fetching and Server Components Standards | runtime | react | `docs/artifacts/A28-react-data-fetching-standards.md` |
+| A29 | React Forms and Validation Standards | runtime | react | `docs/artifacts/A29-react-forms-standards.md` |
+| A30 | React Testing Standards | runtime | react | `docs/artifacts/A30-react-testing-standards.md` |
+| A31 | Frontend E2E and Visual Testing Standards | runtime | react | `docs/artifacts/A31-frontend-e2e-standards.md` |
+| A32 | TypeScript Contract Standards | static | react, typescript | `docs/artifacts/A32-typescript-contract-standards.md` |
+| A33 | React Accessibility Standards | runtime | react | `docs/artifacts/A33-react-accessibility-standards.md` |
+| A34 | React Performance Standards | runtime | react | `docs/artifacts/A34-react-performance-standards.md` |
+| A35 | Frontend Security and Supply Chain Standards | runtime | react | `docs/artifacts/A35-frontend-security-standards.md` |
+| A36 | Agent Evaluation Standards | process | react | `docs/artifacts/A36-agent-evaluation-standards.md` |
 
 ## Numbers (single homes)
 

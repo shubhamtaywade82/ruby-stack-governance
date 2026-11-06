@@ -8,10 +8,15 @@ self:
   reek: [bundle, exec, reek, lib, exe]
   rubocop: [bundle, exec, rubocop]
   rubycritic: [bundle, exec, rubycritic, --minimum-score, "80", lib, exe]
-app: # target Rails application; run inside an app checkout that adopts this corpus
+app: # target application (Rails or web); run inside an app checkout that adopts this corpus
   brakeman: [bundle, exec, brakeman, -q, -w2]
   bundle_audit: [bundle, exec, bundle-audit, check]
   mutant_core: [bundle, exec, mutant, --since, main]
   packwerk: [bin/packwerk, check]
   rspec_guard: [bundle, exec, rspec, spec/guards]
   rubocop: [bundle, exec, rubocop]
+  npm_audit: [bun, pm, audit]
+  web_e2e: [bun, run, e2e]
+  web_lint: [bun, run, lint]
+  web_test: [bun, run, test]
+  web_typecheck: [bun, run, typecheck]

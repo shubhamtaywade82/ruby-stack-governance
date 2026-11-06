@@ -1,5 +1,34 @@
 # Changelog
 
+## 1.3.0 — node skill-pack ecosystem corpus merge (A45–A47)
+
+The pack layer of the Node ecosystem lands in the corpus, grounded in the
+[node-agent-skills](https://github.com/shubhamtaywade82/node-agent-skills)
+pack (manifest schema v3) — the third governed companion pack alongside
+ruby-agent-skills and react-agent-skills. No Ruby code changed — the MCP
+contract stays v1.0.0; every addition is corpus data.
+
+- 3 new artifacts, all `mirror: true`:
+  - **A45** skill-pack format + manifest governance — one SKILL.md per
+    skill with strict-YAML-valid frontmatter (bare `": "` in descriptions
+    is a defect: v3 cross-pack loaders parse real YAML), manifest↔filesystem
+    1:1 sync, the v3 `adapter_skills`/`adapters` structural split, per-skill
+    semver independent of the pack version, `node-` namespace prefixes,
+    counts derived never hardcoded.
+  - **A46** distribution + release discipline — allowlist payloads,
+    checksums + version/source identity on every distribution, generated
+    artifacts as gated derived outputs (Laws 4–6 applied to the pack),
+    releases never weaken gates, zero-dependency additive-only runtime.
+  - **A47** cross-pack integration (stacks: ruby, react, nodejs; layer:
+    agent-interface) — declared companions with pinned refs + snapshotted
+    manifests, symmetric seam skills, additive-only schema evolution
+    (v3 superset of v1/v2), eval-gated `route_cross_pack` routing, and
+    collision registries for names and triggers.
+- 3 Claude skills + 3 Cursor rules generated; `AGENT_CONTEXT.md`
+  reindexed to 47 artifact rows. Mirrors byte-stable (Law 6).
+- `skills_corpus_coverage` ratchet: 68 → 70 (30 of 43
+  mirrored-or-scheduled now mirrored).
+
 ## 1.2.0 — nodejs stack corpus merge
 
 The Node.js stack lands in the corpus (A37–A44), grounded in the

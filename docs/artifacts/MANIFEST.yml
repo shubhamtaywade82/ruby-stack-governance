@@ -12,8 +12,12 @@
 # contracts, accessibility, performance, security + supply chain, and agent
 # evaluation. A37–A44: nodejs stack merge — modules/packages, async/event
 # loop, streams/backpressure, HTTP services, process/runtime, logging,
-# service testing, server security. A45+ reserved for ecosystem expansions
-# (per-library skills stay in the pack repos).
+# service testing, server security. A45–A47: node skill-pack ecosystem
+# merge, grounded in the node-agent-skills pack — pack format + manifest
+# governance (A45), distribution + release discipline (A46), and cross-pack
+# integration with ruby-agent-skills / react-agent-skills (A47).
+# A48+ reserved for ecosystem expansions (per-library skills stay in the
+# pack repos).
 artifacts:
   - id: A01
     title: Tooling Map and Selection Standards
@@ -356,3 +360,30 @@ artifacts:
     skills_slug: node-security-standards
     skill_description: "Use when securing Node.js servers — headers, rate limiting, path traversal and command injection prevention, timing-safe secrets, centralized auth guards, and frozen installs. npm_audit gates CI."
     globs: "src/**, server/**, app/**, middleware/**"
+  - id: A45
+    title: Node.js Skill Pack Format and Manifest Standards
+    stacks: [nodejs]
+    layer: static
+    file: docs/artifacts/A45-node-skill-pack-format-standards.md
+    mirror: true
+    skills_slug: node-skill-pack-format-standards
+    skill_description: "Use when creating, editing, or reviewing an Agent Skills pack — SKILL.md frontmatter, the manifest registry, per-skill versioning, or cross-pack naming. Frontmatter is strict-YAML valid; manifest and filesystem stay 1:1."
+    globs: "skill-manifest.yml, skills/**, adapters/**"
+  - id: A46
+    title: Node.js Skill Pack Distribution and Release Standards
+    stacks: [nodejs]
+    layer: process
+    file: docs/artifacts/A46-node-skill-pack-distribution-standards.md
+    mirror: true
+    skills_slug: node-skill-pack-distribution-standards
+    skill_description: "Use when packaging, distributing, releasing, or consuming a skill pack outside its source repository. Allowlist payloads, checksums with version and source identity, releases never weaken gates."
+    globs: "scripts/**, docs/PACK_DISTRIBUTION.md, package.json, .github/workflows/**"
+  - id: A47
+    title: Cross-Pack Integration Standards
+    stacks: [ruby, react, nodejs]
+    layer: agent-interface
+    file: docs/artifacts/A47-cross-pack-integration-standards.md
+    mirror: true
+    skills_slug: cross-pack-integration-standards
+    skill_description: "Use when routing a task across the governed skill packs (ruby, react, node) or changing the cross-pack contract — companions, seam skills, pinned snapshots, collision registries, and eval-gated routing."
+    globs: "**"

@@ -56,6 +56,9 @@ static -> runtime -> process -> agent-context -> agent-interface
 | A42 | Node.js Logging and Observability Standards | runtime | nodejs | `docs/artifacts/A42-node-logging-standards.md` |
 | A43 | Node.js Service Testing Standards | runtime | nodejs | `docs/artifacts/A43-node-testing-standards.md` |
 | A44 | Node.js Server Security Standards | runtime | nodejs | `docs/artifacts/A44-node-security-standards.md` |
+| A45 | Node.js Skill Pack Format and Manifest Standards | static | nodejs | `docs/artifacts/A45-node-skill-pack-format-standards.md` |
+| A46 | Node.js Skill Pack Distribution and Release Standards | process | nodejs | `docs/artifacts/A46-node-skill-pack-distribution-standards.md` |
+| A47 | Cross-Pack Integration Standards | agent-interface | ruby, react, nodejs | `docs/artifacts/A47-cross-pack-integration-standards.md` |
 
 ## Numbers (single homes)
 

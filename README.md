@@ -27,7 +27,7 @@ Start with `docs/LAWS.md` — the six laws decide every dispute. Then
 
 | Path | Role |
 |------|------|
-| `docs/artifacts/` | the corpus — A01–A44 (+ `MANIFEST.yml`, the machine index) |
+| `docs/artifacts/` | the corpus — A01–A47 (+ `MANIFEST.yml`, the machine index) |
 | `docs/ratchets.yml` | single home for every ratchet target |
 | `config/gates.yml` | single home for gate commands |
 | `.rubocop.yml` | single home for code limits |
@@ -81,6 +81,12 @@ agent edits app/sidekiq/invoice_sync_job.rb
   event loop, streams/backpressure, HTTP services, process/runtime,
   logging/observability, service testing, server security, all 8
   mirrored.
+- Node skill-pack ecosystem merge landed: **A45–A47**, grounded in the
+  [node-agent-skills](https://github.com/shubhamtaywade82/node-agent-skills)
+  pack — pack format + manifest governance, distribution + release
+  discipline, and cross-pack integration (companions, seams, pinned
+  snapshots, eval-gated routing) with ruby-agent-skills and
+  react-agent-skills, all 3 mirrored.
 - `skills_corpus_coverage` ratchet: mirrored artifacts vs scheduled —
   read `docs/ratchets.yml`.
 - `Gemfile.lock` committed; `bundler-audit` clean.
